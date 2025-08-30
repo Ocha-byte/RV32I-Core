@@ -1,0 +1,82 @@
+#[no_mangle]
+entity main(
+    #[no_mangle] clk: clock,
+    #[no_mangle] rst_n: bool,
+    #[no_mangle] LED: inv &[bool; 8],
+) {
+
+    // Stage 1: Instruction Fetch
+    // Program Counter - PC = PC + 4;
+    clocked_memory // Instantiation of a memory
+    read_memory // Reading from memory
+
+    // Ports being used to share access to a memory between modules
+    struct port RPort {
+        addr: &mut int<16>, read_val: &int<32>
+    }
+    struct port WPort {
+        inner: &mut (int<16>, Option<int<32>>)
+    }
+
+    entity dp_mem(clk: clock) -> (RPort, WPort) {
+        let (r_addr, w) = ...;
+        let w_ports = [inst read_wire(w.inner)];
+        let mem = inst read_memory(
+            mem, inst read_wire(r_addr)
+            );
+            (RPort(r_addr, &r_val), w)
+    }
+
+    pipeline(10) reader(clk: clock, r_port: RPort) {
+        reg;
+            set r_port.addr = address;
+            let mem_out = *r_port.read_val;
+        reg; // ...
+    }
+
+    pipeline(5) writer(clk: clock, w_port: WPort) {
+        reg;
+            set w_port.inner = (address, Some(value))
+        reg; // ...
+    }
+
+    entity top(clk: clock) -> ... {
+        let (r, w) = inst dp_mem(clk);
+        let reader_out = inst(10) reader(clk, r);
+        let writer_out = inst(5) writer(clk, w);
+        // ...
+    }
+
+    // Mux - For Jumps?
+
+
+    // Instruction Memory (IMEM)
+
+
+    // Stage 2: Instruction Decode
+    // IMEM to Register File (RF)
+
+    // Stage 3: Execute
+    // Arithmetic Logic Unit (ALU)
+    // IMEM
+
+
+    // Stage 4: Memory Access
+
+
+    // Stage 5: Write Back to Register
+
+
+    // The button is active when released, but we want the reset to be active high, so
+    // we'll invert it
+    let rst = !rst_n;
+
+    // This board has a 100 MHz oscillator. Generate a 10 Hz signal
+    let MAX = 10_000_000;
+    reg(clk) counter: uint<28> reset(rst: 0) = if counter == MAX {0} else {trunc(counter + 1)};
+
+    // Use that 10 Hz signal to increment a counter which we'll output on the LEDs
+    reg(clk) led: uint<8> reset(rst: 0) = if counter == 0 {trunc(led + 1)} else {led};
+
+    set LED = &led.to_bits();
+}
