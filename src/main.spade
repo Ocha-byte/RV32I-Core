@@ -1,10 +1,21 @@
 // RV32I Core
 
+// Modules
+mod riscv_defs;
+mod riscv_fetch;
+mod riscv_imem;
+mod riscv_decoder;
+mod riscv_rf;
+mod riscv_alu;
+mod riscv_dmem;
+
 #[no_mangle]
 entity main(
     #[no_mangle] clk: clock,
     #[no_mangle] rst_n: bool,
 ) {
+
+
 
     // Stage 1: Instruction Fetch
     'pc // Program Counter

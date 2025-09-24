@@ -1,4 +1,11 @@
 // Stage 2: Instruction Decode
+
+// Modules
+mod riscv_defs;
+mod riscv_imem;
+mod riscv_rf;
+mod riscv_alu;
+
 // receive instruction from imem
 
 // output rs1, rs2, rd, imm addresses to register file

@@ -1,0 +1,6 @@
+// Data Memory
+
+// Modules
+mod riscv_defs;
+mod riscv_decoder;
+mod riscv_alu;

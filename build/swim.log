@@ -1,0 +1,118 @@
+[2025-09-24][20:40:15][DEBUG] Using OSS cad suite from "/home/rizzy/.local/share/swim/bin/oss-cad-suite/bin"
+[2025-09-24][20:40:15][DEBUG] Set PATH to Some("/home/rizzy/.local/share/swim/bin/oss-cad-suite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/lib/rustup/bin")
+[2025-09-24][20:40:15][DEBUG] Built-in command Args { command: Build, quiet: false, debug_spadec: false, profile_spadec: false, override_compiler: None, num_threads: None, use_system_tools: false }
+[2025-09-24][20:40:15][INFO] Cloning "spade"
+[2025-09-24][20:40:15][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "clone" "--origin" "origin" "https://gitlab.com/spade-lang/spade.git" "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:40:21][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "diff" "--exit-code"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:40:21][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "checkout" "--detach" "--force" "refs/remotes/origin/main" "--"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:40:22][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "rev-parse" "HEAD"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:40:22][DEBUG] [stdout]:
+a6b884677ff63c33f9dfd289e8eabefcff19ab45
+
+[2025-09-24][20:40:22][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: true }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:40:22][INFO] Building Spade Compiler
+[2025-09-24][20:40:42][INFO] Finished: Building Spade Compiler
+[2025-09-24][20:40:42][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:40:42][DEBUG] Opened LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:40:42][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:40:42][INFO] Building spade code
+[2025-09-24][20:40:42][ERROR] Failed to build spade code
+[2025-09-24][20:55:07][DEBUG] Using OSS cad suite from "/home/rizzy/.local/share/swim/bin/oss-cad-suite/bin"
+[2025-09-24][20:55:07][DEBUG] Set PATH to Some("/home/rizzy/.local/share/swim/bin/oss-cad-suite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/lib/rustup/bin")
+[2025-09-24][20:55:07][DEBUG] Built-in command Args { command: Build, quiet: false, debug_spadec: false, profile_spadec: false, override_compiler: None, num_threads: None, use_system_tools: false }
+[2025-09-24][20:55:07][DEBUG] Exists in lock file
+[2025-09-24][20:55:07][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "diff" "--exit-code"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:55:07][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "checkout" "--detach" "--force" "a6b884677ff63c33f9dfd289e8eabefcff19ab45" "--"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:55:07][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "rev-parse" "HEAD"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:55:07][DEBUG] [stdout]:
+a6b884677ff63c33f9dfd289e8eabefcff19ab45
+
+[2025-09-24][20:55:07][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: true }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:55:07][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:55:07][DEBUG] Opened LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:55:07][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:55:07][INFO] Building spade code
+[2025-09-24][20:55:07][ERROR] Failed to build spade code
+[2025-09-24][20:55:39][DEBUG] Using OSS cad suite from "/home/rizzy/.local/share/swim/bin/oss-cad-suite/bin"
+[2025-09-24][20:55:39][DEBUG] Set PATH to Some("/home/rizzy/.local/share/swim/bin/oss-cad-suite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/lib/rustup/bin")
+[2025-09-24][20:55:39][DEBUG] Built-in command Args { command: Build, quiet: false, debug_spadec: false, profile_spadec: false, override_compiler: None, num_threads: None, use_system_tools: false }
+[2025-09-24][20:55:39][DEBUG] Exists in lock file
+[2025-09-24][20:55:39][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "diff" "--exit-code"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:55:39][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "checkout" "--detach" "--force" "a6b884677ff63c33f9dfd289e8eabefcff19ab45" "--"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:55:39][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "rev-parse" "HEAD"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:55:39][DEBUG] [stdout]:
+a6b884677ff63c33f9dfd289e8eabefcff19ab45
+
+[2025-09-24][20:55:39][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: true }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:55:39][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:55:39][DEBUG] Opened LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:55:39][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:55:39][INFO] Building spade code
+[2025-09-24][20:55:39][ERROR] Failed to build spade code
+[2025-09-24][20:55:58][DEBUG] Using OSS cad suite from "/home/rizzy/.local/share/swim/bin/oss-cad-suite/bin"
+[2025-09-24][20:55:58][DEBUG] Set PATH to Some("/home/rizzy/.local/share/swim/bin/oss-cad-suite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/lib/rustup/bin")
+[2025-09-24][20:55:58][DEBUG] Built-in command Args { command: Build, quiet: false, debug_spadec: false, profile_spadec: false, override_compiler: None, num_threads: None, use_system_tools: false }
+[2025-09-24][20:55:58][DEBUG] Exists in lock file
+[2025-09-24][20:55:58][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "diff" "--exit-code"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:55:59][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "checkout" "--detach" "--force" "a6b884677ff63c33f9dfd289e8eabefcff19ab45" "--"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:55:59][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "rev-parse" "HEAD"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:55:59][DEBUG] [stdout]:
+a6b884677ff63c33f9dfd289e8eabefcff19ab45
+
+[2025-09-24][20:55:59][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: true }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:55:59][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:55:59][DEBUG] Opened LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:55:59][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:55:59][INFO] Building spade code
+[2025-09-24][20:55:59][ERROR] Failed to build spade code
+[2025-09-24][20:57:16][DEBUG] Using OSS cad suite from "/home/rizzy/.local/share/swim/bin/oss-cad-suite/bin"
+[2025-09-24][20:57:16][DEBUG] Set PATH to Some("/home/rizzy/.local/share/swim/bin/oss-cad-suite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/lib/rustup/bin")
+[2025-09-24][20:57:16][DEBUG] Built-in command Args { command: Build, quiet: false, debug_spadec: false, profile_spadec: false, override_compiler: None, num_threads: None, use_system_tools: false }
+[2025-09-24][20:57:16][DEBUG] Exists in lock file
+[2025-09-24][20:57:16][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "diff" "--exit-code"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:57:16][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "checkout" "--detach" "--force" "a6b884677ff63c33f9dfd289e8eabefcff19ab45" "--"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:57:16][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "rev-parse" "HEAD"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:57:16][DEBUG] [stdout]:
+a6b884677ff63c33f9dfd289e8eabefcff19ab45
+
+[2025-09-24][20:57:16][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: true }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:57:16][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:57:16][DEBUG] Opened LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:57:16][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:57:16][INFO] Building spade code
+[2025-09-24][20:57:16][ERROR] Failed to build spade code
+[2025-09-24][20:58:29][DEBUG] Using OSS cad suite from "/home/rizzy/.local/share/swim/bin/oss-cad-suite/bin"
+[2025-09-24][20:58:29][DEBUG] Set PATH to Some("/home/rizzy/.local/share/swim/bin/oss-cad-suite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/lib/rustup/bin")
+[2025-09-24][20:58:29][DEBUG] Built-in command Args { command: Build, quiet: false, debug_spadec: false, profile_spadec: false, override_compiler: None, num_threads: None, use_system_tools: false }
+[2025-09-24][20:58:29][DEBUG] Exists in lock file
+[2025-09-24][20:58:29][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "diff" "--exit-code"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:58:29][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "checkout" "--detach" "--force" "a6b884677ff63c33f9dfd289e8eabefcff19ab45" "--"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:58:29][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "rev-parse" "HEAD"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-24][20:58:29][DEBUG] [stdout]:
+a6b884677ff63c33f9dfd289e8eabefcff19ab45
+
+[2025-09-24][20:58:29][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: true }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:58:30][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:58:30][DEBUG] Opened LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:58:30][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
+[2025-09-24][20:58:30][INFO] Building spade code
+[2025-09-24][20:58:30][ERROR] Failed to build spade code

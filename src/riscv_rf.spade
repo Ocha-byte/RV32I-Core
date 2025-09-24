@@ -1,4 +1,11 @@
 // Register File
+
+// Modules
+mod riscv_defs;
+mod riscv_imem;
+mod riscv_decoder;
+mod riscv_alu;
+
 // receive data from decoder
 
 // output data to execute stage

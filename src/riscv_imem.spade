@@ -1,4 +1,11 @@
 // Instruction Memory (IMEM)
+
+// Modules
+mod riscv_defs;
+mod riscv_fetch;
+mod riscv_decoder;
+mod riscv_rf;
+
 // receive address from pc
 
 

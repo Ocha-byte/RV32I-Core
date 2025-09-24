@@ -1,62 +1,62 @@
 // Program Counter
-let pc_reset = 0b0000_0000_0000_0000_0000_0000_0000_0000; // Program Counter reset address (32-bit)
+let pc_reset: uint<32> = 0b0000_0000_0000_0000_0000_0000_0000_0000; // Program Counter - reset address (32-bit)
 
 // RV32I Opcode Definitions
 // Computational Instructions
-let add_opcode = 0x0000_0033; // Add
-let sub_opcode = 0x4000_0033; // Sub
-let sll_opcode = 0x0000_1033; // Shift Left Logical
-let srl_opcode = 0x0000_5033; // Shift Right Logical
-let sra_opcode = 0x4000_5033; // Shift Right Arithmetic
-let and_opcode = 0x0000_7033; // AND
-let or_opcode = 0x0000_6033; // OR
-let xor_opcode = 0x0000_4033; // XOR
-let slt_opcode = 0x0000_2033; // Set on Less Than
-let sltu_opcode = 0x0000_3033; // Set on Less Than Unsigned
-let addi_opcode = 0x0000_0013; // Add Immediate
-let slli_opcode = 0x0000_1013; // Shift Left Logical Immediate
-let srli_opcode = 0x0000_5013; // Shift Right Logical Immediate
-let srai_opcode = 0x4000_5013; // Shift Right Arithmetic Immediate
-let andi_opcode = 0x0000_7013; // AND Immediate
-let ori_opcode = 0x0000_6013; // OR Immediate
-let xori_opcode = 0x0000_4013; // XOR Immediate
-let slti_opcode = 0x0000_2013; // Set on Less Than Immediate
-let sltiu_opcode = 0x0000_3013; // Set on Less Than Immediate Unsigned
-let lui_opcode = 0x0000_0037; // Load Upper Immediate (LUI)
-let auipc_opcode = 0x0000_0017; // Add Upper Immediate to PC (AUIPC)
+let add_opcode: uint<7> = 0x0000_0033; // Add
+let sub_opcode: uint<7> = 0x4000_0033; // Sub
+let sll_opcode: uint<7> = 0x0000_1033; // Shift Left Logical
+let srl_opcode: uint<7> = 0x0000_5033; // Shift Right Logical
+let sra_opcode: uint<7> = 0x4000_5033; // Shift Right Arithmetic
+let and_opcode: uint<7> = 0x0000_7033; // AND
+let or_opcode: uint<7> = 0x0000_6033; // OR
+let xor_opcode: uint<7> = 0x0000_4033; // XOR
+let slt_opcode: uint<7> = 0x0000_2033; // Set on Less Than
+let sltu_opcode: uint<7> = 0x0000_3033; // Set on Less Than Unsigned
+let addi_opcode: uint<7> = 0x0000_0013; // Add Immediate
+let slli_opcode: uint<7> = 0x0000_1013; // Shift Left Logical Immediate
+let srli_opcode: uint<7> = 0x0000_5013; // Shift Right Logical Immediate
+let srai_opcode: uint<7> = 0x4000_5013; // Shift Right Arithmetic Immediate
+let andi_opcode: uint<7> = 0x0000_7013; // AND Immediate
+let ori_opcode: uint<7> = 0x0000_6013; // OR Immediate
+let xori_opcode: uint<7> = 0x0000_4013; // XOR Immediate
+let slti_opcode: uint<7> = 0x0000_2013; // Set on Less Than Immediate
+let sltiu_opcode: uint<7> = 0x0000_3013; // Set on Less Than Immediate Unsigned
+let lui_opcode: uint<7> = 0x0000_0037; // Load Upper Immediate (LUI)
+let auipc_opcode: uint<7> = 0x0000_0017; // Add Upper Immediate to PC (AUIPC)
 
 // Memory Access Instructions
-let lb_opcode = 0x0000_0003; // Load Byte
-let lbu_opcode = 0x0000_4003; // Load Byte Unsigned
-let lh_opcode = 0x0000_1003; // Load Halfword
-let lhu_opcode = 0x0000_5003; // Load Halfword Unsigned
-let lw_opcode = 0x0000_2003; // Load Word
-let sb_opcode = 0x0000_0023; // Store Byte
-let sh_opcode = 0x0000_1023; // Store Halfword
-let sw_opcode = 0x0000_2023; // Store Word
-let fence_opcode = 0x0ff0_000f; // memory ordering Fence
+let lb_opcode: uint<7> = 0x0000_0003; // Load Byte
+let lbu_opcode: uint<7> = 0x0000_4003; // Load Byte Unsigned
+let lh_opcode: uint<7> = 0x0000_1003; // Load Halfword
+let lhu_opcode: uint<7> = 0x0000_5003; // Load Halfword Unsigned
+let lw_opcode: uint<7> = 0x0000_2003; // Load Word
+let sb_opcode: uint<7> = 0x0000_0023; // Store Byte
+let sh_opcode: uint<7> = 0x0000_1023; // Store Halfword
+let sw_opcode: uint<7> = 0x0000_2023; // Store Word
+let fence_opcode: uint<7> = 0x0ff0_000f; // memory ordering Fence
 
 // Control Transfer Instructions
-let beq_opcode = 0x0000_0063; // Branch if equal
-let bne_opcode = 0x0000_1063; // Branch not equal
-let blt_opcode = 0x0000_4063; // Branch if less than
-let bltu_opcode = 0x0000_6063; // Branch if less than unsigned
-let bge_opcode = 0x0000_5063; // Branch if greater than
-let bgeu_opcode = 0x0000_7063; // Branch if greater than unsigned
-let jal_opcode = 0x0000_006f; // Jump And Link (JAL)
-let jalr_opcode = 0x0000_0067; // Jump And Link Register
+let beq_opcode: uint<7> = 0x0000_0063; // Branch if equal
+let bne_opcode: uint<7> = 0x0000_1063; // Branch not equal
+let blt_opcode: uint<7> = 0x0000_4063; // Branch if less than
+let bltu_opcode: uint<7> = 0x0000_6063; // Branch if less than unsigned
+let bge_opcode: uint<7> = 0x0000_5063; // Branch if greater than
+let bgeu_opcode: uint<7> = 0x0000_7063; // Branch if greater than unsigned
+let jal_opcode: uint<7> = 0x0000_006f; // Jump And Link (JAL)
+let jalr_opcode: uint<7> = 0x0000_0067; // Jump And Link Register
 
 // System Instructions
-let ecall_opcode = 0x0000_0073; // Environment Call
-let ebreak_opcode = 0x0010_0073; // Environment Break/Breakpoint Exception
+let ecall_opcode: uint<7> = 0x0000_0073; // Environment Call
+let ebreak_opcode: uint<7> = 0x0010_0073; // Environment Break/Breakpoint Exception
 
 // Zifencei Extension Opcode Definition
-let ifence_opcode = 0x0000_100f; // Instruction Fence
+let ifence_opcode: uint<7> = 0x0000_100f; // Instruction Fence
 
 // Zicsr Extension Opcode Definitions
-let csrrw_opcode = 0xc000_1073; // Control and Status Register (CSR) atomic Read Write
-let csrrs_opcode = 0xc000_2073; // atomic Read and Set bits in CSR
-let csrrc_opcode = 0xc000_3073; // atomic Read and Clear bits in CSR
-let csrrwi_opcode = 0xc000_5073; // atomic Read Write Immediate in CSR
-let csrrsi_opcode = 0xc000_6073; // atomic Read and Set bits in CSR with Immediate
-let csrrci_opcode = 0xc000_7073; // atomic Read and Clear bits in CSR with Immediate
+let csrrw_opcode: uint<7> = 0xc000_1073; // Control and Status Register (CSR) atomic Read Write
+let csrrs_opcode: uint<7> = 0xc000_2073; // atomic Read and Set bits in CSR
+let csrrc_opcode: uint<7> = 0xc000_3073; // atomic Read and Clear bits in CSR
+let csrrwi_opcode: uint<7> = 0xc000_5073; // atomic Read Write Immediate in CSR
+let csrrsi_opcode: uint<7> = 0xc000_6073; // atomic Read and Set bits in CSR with Immediate
+let csrrci_opcode: uint<7> = 0xc000_7073; // atomic Read and Clear bits in CSR with Immediate

@@ -1,4 +1,11 @@
 // Stage 3: Execute
+
+// Modules
+mod riscv_defs;
+mod riscv_decoder;
+mod riscv_rf;
+mod riscv_dmem;
+
 // Arithmetic Logic Unit (ALU)
     `alu
     enum Op {
