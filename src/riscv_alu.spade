@@ -1,0 +1,29 @@
+// Stage 3: Execute
+// Arithmetic Logic Unit (ALU)
+    `alu
+    enum Op {
+        Add,
+        Mul
+    }
+
+    pipeline(3) add(clk: clock, rs1: int<32>, rs2: int<32>) -> int<64> {
+        let result = rs1 + rs2;
+        reg * 3;
+        result
+    }
+
+    pipeline(3) mul(clk: clock, rs1: int<32>, rs2: int<32>) -> int<64> {
+        let result = rs1 * rs2;
+        reg * 3;
+        result
+    }
+
+    pipeline(3) compute(clk: clock, op: Op, rs1: int<32>, rs2: int<32>) -> int<64> {
+        let sum = inst(3) add(clk, rs1, rs2);
+        let prod = inst(3) mul(clk, rs1, rs2);
+        reg * 3;
+        match op {
+            Op::Add => sext(sum), // Sign extend to match Mul
+            Op::Mul => prod,
+        }
+    }

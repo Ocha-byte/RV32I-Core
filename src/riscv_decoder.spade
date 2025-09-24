@@ -1,0 +1,4 @@
+// Stage 2: Instruction Decode
+// receive instruction from imem
+
+// output rs1, rs2, rd, imm addresses to register file

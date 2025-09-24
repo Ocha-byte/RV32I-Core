@@ -1,0 +1,167 @@
+// Instruction Memory (IMEM)
+// receive address from pc
+
+
+// output address/data to decoder
+
+
+/*
+
+pipeline(1) mem(clk: clock, addr1: uint<16>, addr2: uint<16>) -> (T, T)
+pipeline(4) mod1(clk: clock, inputs: I, data: T) -> (uint<16>, 0)
+pipeline(3) mod2(clk: clock, inputs: I, data: T) -> (uint<16>, 0)
+
+entity top(clk: clock) {
+    decl memout1, memout2;
+    let (addr1, mod1_out) = inst(4) mod1(clk, I(), memout1);
+    let (addr2, mod2_out) = inst(3) mod2(clk, I(), memout2);
+    let (memout1, memout2) = inst(1) mem(clk, addr1, addr2);
+}
+
+pipeline(4) mod1(clk: clock, inputs: I, mem_out: T) -> (uint<16>, 0) {
+        'start
+    reg;
+        // ...
+    reg;
+        'mem_read
+        let mem_addr = inst mem_ctrl();
+    reg;
+        let result = inst compute(stage(start).mem_out);
+    reg;
+        (stage(mem_read).mem_addr, result)
+}
+
+// Not possible to return compound type with both wires and tuples.
+pipeline(4) mod1(clk: clock, inputs: I, mem_out: T) -> (&uint<16>, &0) {
+    reg;
+        // ...
+    reg;
+        let mem_addr = &inst mem_ctrl();
+    reg;
+        let result = inst compute(*mem_out);
+    reg;
+        (mem_addr, &result)
+}
+
+// Using inverted wires
+pipeline(4) mod1(clk: clock, inputs: I, mem_addr: inv &uint<16>, mem_out: &T) -> O {
+    reg;
+        // ...
+    reg;
+        set mem_addr = inst mem_ctrl();
+    reg;
+        let result = inst compute(*mem_out);
+    reg;
+        result
+}
+
+// Using tuple
+pipeline(4) mod1(clk: clock, inputs: I, mem: (inv &uint<16>, &T)) -> O {
+    reg;
+        // ...
+    reg;
+        set mem#0 = inst mem_ctrl();
+    reg;
+        let result = inst compute(*mem#1);
+    reg;
+        result
+}
+
+// Using ports
+pipeline(1) fake_memory(clk: clock, addrs: [uint<16>; 2]) -> [T; 2]
+pipeline(1) mem(clk: clock) -> ((inv &uint<16>, &T), (inv &uint<16>, &T)) {
+    let (addr1_read, addr1) = port;
+    let (addr2_read, addr2) = port;
+    let [out1, &out2] = inst(1) fake_memory(clk, [*addr1_read, *addr2_read]);
+    reg;
+    ((addr1, &out1), (addr2, &out2))
+}
+
+pipeline(0) top(clk: clock) {
+    let (m1, m2) = inst(1) mem(clk);
+    let out1 = inst(4) mod1(clk, I(), m1);
+    let out2 = inst(4) mod2(clk, I(), m2);
+    // ...
+}
+
+// Ports with inverted port
+struct port MemoryPort<T> {
+    addr: inv &uint<16>,
+    write: inv &Option<T>,
+    read: &T,
+}
+
+pipeline(1) mem<T>(clk: clock, p1: inv MemoryPort<T>, p2: inv MemoryPort<T>) {
+        let [out1, out2] = inst(1) fake_memory(clk, [*p1.addr, *p2.addr]);
+    reg;
+        set p1.read = out1;
+        set p2.read = out2;
+}
+
+entity top(clk: clock) {
+    let (m1, m1_inv) = port;
+    let (m2, m2_inv) = port;
+    let _ = inst(1) mem::<uint<32>>(clk, m1_inv, m2_inv);
+    let out1 = inst(4) mod1(clk, I(), m1);
+    let out2 = inst(3) mod2(clk, I(), m2);
+    // ...
+}
+
+*/
+
+pipeline(1) imem(clk: clock, addr: uint<16>) -> uint<16> {}
+
+//
+
+'imem
+    pipeline(1) imem
+    struct port MemoryPort<T> {
+        addr: inv &uint<16>,
+        write: inv &Option<T>,
+        read: &T,
+    }
+
+    // Ports being used to share access to a memory between modules
+    struct port RPort { // Port type
+        addr: &mut int<16>, read_val: &int<32>
+    }
+    struct port WPort {
+        inner: &mut (int<16>, Option<int<32>>)
+    }
+
+    entity dp_mem(clk: clock) -> (RPort, WPort) { // Where actual memory instantiated -> returns read and write ports
+        let (r_addr, w) = ...; // instantiates the mut-wire r_addr and a WPort
+
+        // instantiate a memory with a single write-port using the clocked_memory entity
+        let w_ports = [inst read_wire(w.inner)];
+        let mem = inst clocked_memory(clk, w_ports);
+
+        // Asynchronously read one value from the memory
+        let r_value = inst read_memory(
+            mem, inst read_wire(r_addr)
+        );
+
+        // Read-port assembled from mutable address, result wire -> returned along with write-port
+        (RPort(r_addr, &r_val), w)
+    }
+
+    //
+    pipeline(10) reader(clk: clock, r_port: RPort) {
+        reg;
+            set r_port.addr = address;
+            let mem_out = *r_port.read_val;
+        reg; // ...
+    }
+
+    pipeline(5) writer(clk: clock, w_port: WPort) {
+        reg;
+            set w_port.inner = (address, Some(value))
+        reg; // ...
+    }
+
+    entity top(clk: clock) -> ... {
+        let (r, w) = inst dp_mem(clk);
+        let reader_out = inst(10) reader(clk, r);
+        let writer_out = inst(5) writer(clk, w);
+        // ...
+    }

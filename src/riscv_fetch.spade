@@ -1,0 +1,16 @@
+// Stage 1: Instruction Fetch
+
+pipeline(2) program_counter (clk: clock, rst_n: bool, instruction: uint<32>, stage(alu)) -> uint<32> {
+    let rst != rst_n;
+
+    let jump: uint<32> = 0; // temp
+    reg(clk) current_address: uint<32> reset(rst: pc_reset) = if jump == 0 {next_address} else {mux};
+    reg(clk) next_address: uint<32> = current_address + 4;
+
+    pipeline(1) mux(current_address, stage(alu), sel: bool) -> uint<32> { // Multiplexor for jumps
+            let next_address = current_address + 0b100; // PC = PC + 4
+            if sel == true {stage(alu)} else {next_address}; // Default to next address
+    }
+}
+
+// Instruction Memory input
