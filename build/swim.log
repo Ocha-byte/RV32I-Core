@@ -116,3 +116,19 @@ a6b884677ff63c33f9dfd289e8eabefcff19ab45
 [2025-09-24][20:58:30][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: false }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }
 [2025-09-24][20:58:30][INFO] Building spade code
 [2025-09-24][20:58:30][ERROR] Failed to build spade code
+[2025-09-26][09:19:33][DEBUG] Using OSS cad suite from "/home/rizzy/.local/share/swim/bin/oss-cad-suite/bin"
+[2025-09-26][09:19:33][DEBUG] Set PATH to Some("/home/rizzy/.local/share/swim/bin/oss-cad-suite/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/usr/lib/rustup/bin")
+[2025-09-26][09:19:33][DEBUG] Built-in command Args { command: UpdateSpade, quiet: false, debug_spadec: false, profile_spadec: false, override_compiler: None, num_threads: None, use_system_tools: false }
+[2025-09-26][09:19:33][DEBUG] Updating compiler via git
+[2025-09-26][09:19:33][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "fetch" "--all" "--tags"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-26][09:19:34][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "diff" "--exit-code"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-26][09:19:34][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "checkout" "--detach" "--force" "refs/remotes/origin/main" "--"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-26][09:19:34][DEBUG] cd "/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade" && "git" "rev-parse" "HEAD"
+working dir: Some("/home/rizzy/Documents/Zed_Projects/RV32I-Core/build/spade")
+[2025-09-26][09:19:34][DEBUG] [stdout]:
+a6b884677ff63c33f9dfd289e8eabefcff19ab45
+
+[2025-09-26][09:19:34][DEBUG] Dropping lock file LockFileRef { inner: LockFile { libraries: None, plugins: None, spade: Some(LockFileLibrary { commit: "a6b884677ff63c33f9dfd289e8eabefcff19ab45", seen: true }) }, path: "/home/rizzy/Documents/Zed_Projects/RV32I-Core/swim.lock" }

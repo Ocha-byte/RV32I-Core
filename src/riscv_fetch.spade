@@ -5,7 +5,6 @@ mod riscv_defs;
 mod riscv_imem;
 mod riscv_alu;
 
-
 #[no_mangle]
 pipeline(2) program_counter (clk: clock, rst_n: bool, instruction: uint<32>) -> uint<32> {
     let rst != rst_n;

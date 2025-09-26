@@ -15,8 +15,6 @@ entity main(
     #[no_mangle] rst_n: bool,
 ) {
 
-
-
     // Stage 1: Instruction Fetch
     'pc // Program Counter
     'imem // Instruction Memory
